@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
+import { HashRouter, Route, Switch, Redirect } from "react-router-dom";
 import Auth from "routes/Auth";
 import Home from "routes/Home";
 import Profile from "routes/Profile";
@@ -7,7 +7,7 @@ import Navigation from "components/Navigation";
 
 function Router({ refreshUser, isLoggedIn, userObj, setName }) {
   return (
-    <BrowserRouter>
+    <HashRouter>
       {/* 로그인 했으면 홈과 프로필 뜨게함 */}
       {isLoggedIn && <Navigation userObj={userObj} setName={setName} />}
       <Switch>
@@ -44,7 +44,7 @@ function Router({ refreshUser, isLoggedIn, userObj, setName }) {
           )}
         </>
       </Switch>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
